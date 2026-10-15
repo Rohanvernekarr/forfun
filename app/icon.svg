@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Lady Anne</title>
+  <rect width="64" height="64" rx="16" fill="#254c3c" />
+  <g fill="#fbf6e8">
+    <ellipse cx="32" cy="19" rx="5" ry="9" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(45 32 32)" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(90 32 32)" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(135 32 32)" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(180 32 32)" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(225 32 32)" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(270 32 32)" />
+    <ellipse cx="32" cy="19" rx="5" ry="9" transform="rotate(315 32 32)" />
+  </g>
+  <circle cx="32" cy="32" r="6" fill="#de845b" />
+</svg>
