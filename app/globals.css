@@ -159,7 +159,7 @@ body{overflow-x:clip}
 .garden-button:hover{background:#d7e9d6;transform:translateY(-2px)}
 .garden-button:focus-visible,.reveal-button:focus-visible,.compliment-box button:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
 .garden-button span{color:var(--orange);font-size:22px;line-height:1}
-.garden-blooms{position:absolute;inset:0;z-index:4;pointer-events:none}
+.garden-blooms{position:absolute;inset:0;z-index:5;pointer-events:none}
 .garden-blooms span{position:absolute;bottom:23%;font-size:clamp(26px,3.2vw,42px);animation:garden-grow .75s cubic-bezier(.2,1.6,.5,1) both}
 .garden-blooms span:nth-child(1){left:9%;bottom:24%}
 .garden-blooms span:nth-child(2){left:28%;bottom:38%;animation-delay:.08s}
@@ -286,3 +286,21 @@ body{overflow-x:clip}
 @media(max-width:700px){.ticker-inner{font-size:14px}.ticker-group{gap:48px;padding:20px 24px}.ticker-item b{font-size:21px}}
 @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.ticker-inner{animation:none}}
+
+.hero-photo-frame{position:absolute;left:50%;bottom:15%;width:54%;height:70%;z-index:4;overflow:hidden;border:7px solid #fffaf0;border-radius:50%;background:#dce9de;box-shadow:0 18px 40px #254c3c30;transform:translateX(-50%)}
+.hero-photo{object-fit:cover;object-position:center 34%}
+.hero-art .art-stem{z-index:5}
+.hero-art .stem-one{left:13%}
+.hero-art .stem-two{left:49%;height:90px}
+.hero-art .stem-three{left:87%}
+.hero-art .art-stem span{filter:drop-shadow(0 3px 5px #254c3c66)}
+.photo-flowers{position:absolute;inset:0;z-index:5;pointer-events:none}
+.photo-flowers span{position:absolute;display:block;font-size:clamp(42px,5vw,64px);line-height:1;filter:drop-shadow(0 4px 6px #254c3c55)}
+.photo-flowers span:nth-child(1){left:7%;bottom:24%;color:#fff2d0}
+.photo-flowers span:nth-child(2){right:6%;bottom:30%;color:#f4c194}
+.photo-flowers span:nth-child(3){left:21%;bottom:8%;font-size:40px;color:#f7daa2}
+.photo-flowers span:nth-child(4){right:20%;bottom:10%;font-size:38px;color:#fff2d0}
+@media(max-width:700px){.photo-flowers span{font-size:36px}.photo-flowers span:nth-child(n+3){font-size:26px}}
+@media(max-width:700px){.hero-photo-frame{bottom:16%;width:50%;height:68%;border-width:5px}}
+@media(max-width:480px){.hero-photo-frame{width:52%;border-width:4px}}
+@media(max-width:700px) and (max-height:750px){.hero-photo-frame{width:46%;height:70%;bottom:15%}}

@@ -3,11 +3,13 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const moments: { title: string; caption: string; extra: string; image: string | null; scene: string; icon: string }[] = [
-  // Add photos to public, then set image to paths such as "/anne-1.jpg".
-  { title: "The peaceful one", caption: "In her natural habitat, probably looking for quiet.", extra: "A little fresh air and she’s right where she wants to be.", image: null, scene: "meadow", icon: "✿" },
-  { title: "The not-so-shy one", caption: "She says she’s shy. We’re still investigating.", extra: "The evidence against her ‘shy’ claim keeps growing.", image: null, scene: "sunset", icon: "☼" },
-  { title: "The little moments", caption: "The ones that end up meaning the most.", extra: "Sometimes the best memory is just laughing together.", image: null, scene: "night", icon: "✦" },
+const moments = [
+  { title: "That smile", caption: "A smile worth keeping forever.", extra: "This one deserves a spot right at the start.", image: "/anne-1.png" },
+  { title: "The close-up", caption: "A little moment, captured just as it was.", extra: "Some photos don’t need a big story to be special.", image: "/anne-2.png" },
+  { title: "The playful one", caption: "A little filter, a lot of personality.", extra: "The shy allegations are getting harder to believe.", image: "/anne-3.png" },
+  { title: "A little mischief", caption: "Proof that she knows how to have fun.", extra: "Exhibit A in the case against 'I’m shy.'", image: "/anne-4.png" },
+  { title: "Just Lady Anne", caption: "One of those photos you want to save.", extra: "A little reminder of what makes her, her.", image: "/anne-5.png" },
+  { title: "Soft moments", caption: "Some moments feel extra lovely.", extra: "And this one belongs here.", image: "/anne-6.png" },
 ];
 
 const tickerItems = [
@@ -112,15 +114,17 @@ export default function Home() {
           <div className="hero-footnote"><span className="tiny-flower">✿</span> Made with a lot of love (and a little teasing)</div>
           <button className="garden-button" type="button" onClick={() => setGardenBloom((count) => count + 1)}>{gardenBloom === 0 ? "Make the garden bloom" : gardenBloom < 4 ? "Grow more flowers" : "Bloom again"} <span aria-hidden="true">✿</span></button>
         </div>
-        <div className="hero-art" aria-label="Illustration of a peaceful garden with flowers" role="img">
+        <div className="hero-art">
           <div className="art-sun" />
           <div className="art-hill art-hill-back" />
           <div className="art-hill art-hill-front" />
+          <div className="hero-photo-frame"><Image src="/anne-2.png" alt="Lady Anne in a close-up selfie" fill sizes="(max-width: 700px) 45vw, (max-width: 1050px) 25vw, 240px" className="hero-photo" preload /></div>
           <div className="art-stem stem-one"><span>✿</span></div>
           <div className="art-stem stem-two"><span>✿</span></div>
           <div className="art-stem stem-three"><span>✿</span></div>
           <div className="art-sparkle sparkle-one">✧</div>
           <div className="art-sparkle sparkle-two">✧</div>
+          <div className="photo-flowers" aria-hidden="true"><span>✿</span><span>✿</span><span>✿</span><span>✿</span></div>
           <div className="art-caption"><span className="caption-heart">♥</span> one of a kind, always</div>
           <div className="art-sticker"><span>100%</span><small>lovely human</small></div>
           {gardenBloom > 0 && <div className="garden-blooms" key={gardenBloom} aria-hidden="true">
@@ -160,8 +164,8 @@ export default function Home() {
         <div className="wrap"><div className="section-heading"><div><span className="label">02 / THE MEMORIES</span><h2>Little moments, <em>big smiles.</em></h2></div><p>A place for the photos and memories that make this little page hers.</p></div>
           <div className="moments-grid">{moments.map((moment, index) => <article className={`moment-card ${burstMomentIndex === index ? "burst-card" : ""}`} key={moment.title}>
             {burstMomentIndex === index && <EmojiBurst count={momentBurstCount} emojis={["📸", "✦", "♡", "🌼", "📸", "✦", "♡", "🌼", "✦", "♡"]} />}
-            <div className={`moment-image ${moment.scene}`}>
-              {moment.image ? <Image src={moment.image} alt={moment.title} fill sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw" className="moment-photo" /> : <><span className="moment-art" aria-hidden="true">{moment.icon}</span><span className="photo-hint">a photo belongs here ♡</span></>}
+            <div className="moment-image">
+              <Image src={moment.image} alt={`Portrait of Lady Anne, photo ${index + 1}`} fill sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw" className="moment-photo" />
               <span className="moment-index">0{index + 1}</span>
             </div>
             <div className="moment-copy">
@@ -174,7 +178,7 @@ export default function Home() {
               <p className="moment-secret" id={`moment-extra-${index}`} hidden={openMoment !== index}>{moment.extra}</p>
             </div>
           </article>)}</div>
-          <p className="gallery-note">Psst... these little scenes are waiting for your favorite photos together.</p>
+          <p className="gallery-note">Six little snapshots of one very lovely person.</p>
         </div>
       </section>
 
